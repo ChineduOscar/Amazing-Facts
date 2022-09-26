@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 function Facts({ title, content }) {
   const [isShow, setIsShow] = useState(false);
@@ -11,15 +12,16 @@ function Facts({ title, content }) {
       <span className='read-more' onClick={() => setIsShow(!isShow)}>
         {isShow ? `show less` : 'read more'}
       </span>
-      <button
-        className='copy-to-clipboard'
-        onClick={() => {
-          setIsCopied(true);
-          navigator.clipboard.writeText(title);
-        }}
-      >
-        {isCopied ? 'copied' : 'copy'}
-      </button>
+      <CopyToClipboard text={title}>
+        <button
+          className='copy-to-clipboard'
+          onClick={() => {
+            setIsCopied(true);
+          }}
+        >
+          {isCopied ? 'copied' : 'copy'}
+        </button>
+      </CopyToClipboard>
     </div>
   );
 }

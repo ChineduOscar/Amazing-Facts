@@ -1,3 +1,4 @@
+@import-normalize;
 /* root styles */
 :root {
   /* shades of primary color*/
@@ -27,6 +28,7 @@
   --clr-grey-10: hsl(210, 36%, 96%);
   --clr-white: #fff;
   --clr-cream: #fffdd133;
+  --clr-ash: #3f3f3f;
   --clr-black: #222;
   --clr-light-black: #3d3535;
 
@@ -48,11 +50,13 @@
 .light-theme {
   --clr-primary-5: hsl(0, 82%, 17%);
   --clr-primary-7: hsl(0, 94%, 34%);
+  --clr-small-container: #fffdd133;
   --clr-font: #222;
   --clr-bcg: #fff;
   --clr-head-bg: #fff;
   --clr-foot-bg: #222;
   --transition-translate: translateX(0%);
+  --toggle-weight: normal;
 }
 
 .dark-theme {
@@ -60,11 +64,13 @@
   --clr-primary-5: hsl(0, 96%, 28%);
   --clr-primary-6: hsl(0, 87%, 44%);
   --clr-primary-7: hsl(0, 94%, 19%);
+  --clr-small-container: #3f3f3f;
   --clr-font: #fff;
   --clr-bcg: #222;
   --clr-head-bg: #353434;
   --clr-foot-bg: #353434;
   --transition-translate: translateX(90%);
+  --toggle-weight: bold;
 }
 /*
 =============== 
@@ -123,7 +129,11 @@ p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-5);
 }
-
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 @media screen and (min-width: 800px) {
   h1 {
     font-size: 2.2rem;
@@ -179,7 +189,7 @@ p {
   justify-content: space-between;
   align-items: center;
   width: 4rem;
-  border: 2px solid var(--clr-primary-5);
+  border: 2px solid var(--clr-primary-7);
   border-radius: 1000px;
   background-color: var(--clr-font);
   transition: 0.6s;
@@ -280,7 +290,7 @@ button:hover {
 }
 .nav-menu-container {
   padding: 1.5rem;
-  background-color: var(--clr-cream);
+  background-color: var(--clr-small-container);
   box-shadow: var(--dark-shadow);
   margin-bottom: 2rem;
 }
@@ -293,6 +303,7 @@ button:hover {
 }
 .read-more {
   font-size: 1.1rem;
+  font-weight: var(--toggle-weight);
   border: none;
   background-color: transparent;
   color: var(--clr-primary-7);
@@ -341,6 +352,7 @@ button:hover {
   padding: 1rem;
   box-shadow: var(--light-shadow);
   margin-top: 2rem;
+  margin-top: auto;
 }
 .footer--section h4 {
   line-height: 1.5rem;

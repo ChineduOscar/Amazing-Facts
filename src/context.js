@@ -77,7 +77,7 @@ const AppProvider = ({ children }) => {
 
   /*to filter the query of the user*/
   const filteredItems = items.filter((item) => {
-    return item.title.toLowerCase().includes(query);
+    return item.title.toLowerCase().includes(query.toLowerCase());
   });
 
   return (
